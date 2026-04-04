@@ -69,5 +69,6 @@ fn install_postgres() {
     let _ = Command::new("sudo")
         .args(["systemctl", "start", "postgresql"])
         .output();
+        
     println!("[INF]PostgreSQLのインストールに成功しました。");
 }
