@@ -1,5 +1,16 @@
 pub fn installer(){
     println!("インストールを実行します");//後で消します。
     
-    println!("A N T H E N A");
+    println!("{logo}");
 }
+let logo = r#"
+    ╔═══════════════════════════════════╗
+    ║                                   ║
+    ║          A N T H E N A            ║
+    ║                                   ║    
+    ║        認証・認可システム         ║
+    ║                                   ║
+    ║     Authentication & Auth.        ║
+    ║                                   ║
+    ╚═══════════════════════════════════╝
+    "#;
