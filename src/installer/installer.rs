@@ -55,6 +55,7 @@ fn postgres_cheak_error(_error: std::io::Error){
 
 
 fn install_postgres() {
+    println!("[INF]Postgresをインストール中...");
     let _ = Command::new("sudo")
         .args(["apt", "update"])
         .output();
