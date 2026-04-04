@@ -30,6 +30,7 @@ fn chek_postgres(){
             setup();
         }
         Ok(_) => {
+            println!("Postgresをインストール中...");
             install_postgres(); 
         }
         Err(e) => {
@@ -44,6 +45,8 @@ fn chek_postgres(){
 
 fn setup(){
     println!("システムのインストールを準備中です...");
+    install_postgres();
+    println!("インストール完了");
 }
 
 
