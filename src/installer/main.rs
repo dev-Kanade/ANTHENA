@@ -8,9 +8,9 @@ pub fn installer(installertype:i32){
     if installertype == 0 {
         installer::installer();
     }else if installertype == 1 {
-        updater::update::update();
+        updater::update();
     }else if installertype == 2 {
-        uninstaller::uninstall::uninstall();
+        uninstaller::uninstall();
     }else{
         eprintln!("インストーラーの起動に失敗しました。");
     }
