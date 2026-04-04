@@ -1,11 +1,13 @@
 pub fn update(){
     println!("更新データを確認中...");
     let mut update = cheak_update();
-    println!("{update}");
+    if update == true {
+        println!("更新データが見つかりました。\nアップデートしますか？(y/n)");
+    }else{
+        println!("更新データが見つかりませんでした。\n最新バージョンです。");
+    }
 }
 
-fn cheak_update()->&str{
-    let update_size:&str = 12Mb;
-    let update_version:&str = 1.0;
-    "更新データが見つかりました。\nアップデートサイズ:{update_size}\nバージョン:{update_version}"
+fn cheak_update()->bool{
+    true
 }
