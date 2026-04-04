@@ -45,8 +45,6 @@ fn chek_postgres(){
 
 fn setup(){
     println!("システムのインストールを準備中です...");
-    install_postgres();
-    println!("インストール完了");
 }
 
 
