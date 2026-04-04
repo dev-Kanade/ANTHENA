@@ -1,5 +1,4 @@
 pub fn installer(installertype:i32){
-    println!("Hello World!");
 
     if installertype == 0 {
         super::installer::installer();
