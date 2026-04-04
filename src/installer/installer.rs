@@ -1,7 +1,7 @@
 use std::process::Command;
 use rand::Rng;
 use std::env;
-
+mod user;
 pub fn installer(){
     printwelcom();
     chek_postgres();
