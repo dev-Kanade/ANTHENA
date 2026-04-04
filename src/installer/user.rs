@@ -1,10 +1,14 @@
+use rand::Rng;
+use std::env;
+use std::process::Command;
+
 pub fn create_system_user() {
     let username = "anthena".to_string();
-
     let userpassword = generate_random_password(10);
-    dotenv::dotenv().ok(); 
+    dotenv::dotenv().ok();
 
     let db_user = env::var("DBUSER").unwrap_or_else(|_| {
+        eprintln!("警告: .env に DBUSER がありません。デフォルト値を使用します。");
         "default_dbuser".to_string()
     });
 
@@ -16,6 +20,7 @@ pub fn create_system_user() {
     env::set_var("DBUSER", &db_user);
     env::set_var("DBPASSWORD", &db_password);
 
+    println!(".env から設定: DBUSER = {}, DBPASSWORD = [hidden]", db_user);
 
     if let Err(e) = Command::new("useradd")
         .args([
@@ -48,6 +53,11 @@ pub fn create_system_user() {
         eprintln!("エラー: usermod (sudo追加) 実行失敗: {}", e);
         return;
     }
+
+    println!("✅ システムユーザー '{}' の作成が完了しました！", username);
+    println!("   ・sudo権限を付与済み");
+    println!("   ・パスワード: {}", userpassword);
+    println!("   ・DBUSER / DBPASSWORD を環境変数に設定済み");
 }
 
 fn generate_random_password(length: usize) -> String {
