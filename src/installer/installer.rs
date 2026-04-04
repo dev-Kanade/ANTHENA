@@ -31,7 +31,8 @@ fn chek_postgres(){
         }
         Ok(_) => {
             println!("[INF]Postgresをインストール中...");
-            install_postgres(); 
+            install_postgres();
+            setup();
         }
         Err(e) => {
             if e.kind() == std::io::ErrorKind::NotFound {
