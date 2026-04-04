@@ -74,3 +74,8 @@ fn install_postgres() {
 
     println!("[INF]PostgreSQLのインストールに成功しました。");
 }
+
+fn create_system_user(){
+    let username = String::from("anthena");
+    let userpassword = String::new();
+}
