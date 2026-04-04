@@ -1,3 +1,3 @@
 pub fn uninstall(){
-    println!("アンインストール");
+    println!("[INF]ANTHENAアンインストーラーが起動しました。");
 }
