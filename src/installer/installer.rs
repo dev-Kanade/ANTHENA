@@ -1,6 +1,4 @@
 use std::process::Command;
-use rand::Rng;
-use std::env;
 use super::user::create_system_user;
 pub fn installer(){
     printwelcom();
