@@ -1,3 +1,7 @@
 pub fn update(){
-    println!("アップデータ");
+    println!("更新データを確認中...");
+}
+
+fn cheak_update()->bool{
+    true
 }
