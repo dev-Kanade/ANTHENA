@@ -30,7 +30,7 @@ fn chek_postgres(){
             setup();
         }
         Ok(_) => {
-            println!("Postgresをインストール中...");
+            println!("[INF]Postgresをインストール中...");
             install_postgres(); 
         }
         Err(e) => {
@@ -44,12 +44,12 @@ fn chek_postgres(){
 }
 
 fn setup(){
-    println!("システムのインストールを準備中です...");
+    println!("[INF]システムのインストールを準備中です...");
 }
 
 
 fn postgres_cheak_error(_error: std::io::Error){
-    eprintln!("インストール中にエラーが発生しました。");
+    eprintln!("[ERROR]インストール中にエラーが発生しました。");
 }
 
 
@@ -62,5 +62,5 @@ fn install_postgres() {
         .args(["apt", "install", "-y", "postgresql", "postgresql-contrib"])
         .output();
 
-    println!("PostgreSQLのインストールに成功しました。");
+    println!("[INF]PostgreSQLのインストールに成功しました。");
 }
