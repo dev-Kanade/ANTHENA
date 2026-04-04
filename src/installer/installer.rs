@@ -26,4 +26,27 @@ fn printwelcom(){
 fn chek_postgres(){
     //ここにデバイスにPostgresがインストールされているか確認するソースを書きます。
     println!("[INF]お使いのデバイスにPostgreSQLがインストールされているかを確認中です。");
+    match Command::new("psql").arg("-V").output() {
+        Ok(output) if output.status.success() => {
+            function1();
+        }
+        Ok(_) => {
+            function2(); 
+        }
+        Err(e) => {
+            if e.kind() == std::io::ErrorKind::NotFound {
+                function2();
+            } else {
+                function3(e);
+            }
+        }
+    }
+}
+
+fn setup(){
+    println!("インストール中です。");
+}
+
+fn install_postgres(){
+    println!("Postgresをインストール中");
 }
