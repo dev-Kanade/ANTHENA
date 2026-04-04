@@ -17,5 +17,6 @@ fn printwelcom(){
     ╚═══════════════════════════════════╝
     "#;
 
-    println!("{logo}")
+    println!("{logo}");
+    println!("Welcom to ANTHENA Instaler！");
 }
