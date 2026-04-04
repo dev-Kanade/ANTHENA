@@ -1,4 +1,6 @@
 use std::process::Command;
+use rand::Rng;
+use std::env;
 
 pub fn installer(){
     printwelcom();
