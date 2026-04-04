@@ -18,4 +18,5 @@ fn printwelcom(){
 
     println!("{logo}");
     println!("Welcom to ANTHENA Instaler!!");
+    println!("[INF]ANTHENAインストーラーを起動しました。")
 }
