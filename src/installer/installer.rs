@@ -27,7 +27,6 @@ fn chek_postgres(){
     println!("[INF]お使いのデバイスにPostgreSQLがインストールされているかを確認中です。");
     match Command::new("psql").arg("-V").output() {
         Ok(output) if output.status.success() => {
-            install_postgres();
             setup();
         }
         Ok(_) => {
