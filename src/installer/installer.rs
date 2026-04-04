@@ -63,4 +63,6 @@ fn install_postgres() {
     let _ = Command::new("sudo")
         .args(["apt", "install", "-y", "postgresql", "postgresql-contrib"])
         .output();
+
+    println!("PostgreSQLのインストールに成功しました。");
 }
