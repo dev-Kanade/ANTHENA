@@ -48,7 +48,7 @@ fn chek_postgres(){
 
 fn setup(){
     println!("[INF]システムのインストールを準備中です...");
-    user::create_system_user();
+    super::user::create_system_user();
 }
 
 
@@ -76,9 +76,4 @@ fn install_postgres() {
         .output();
 
     println!("[INF]PostgreSQLのインストールに成功しました。");
-}
-
-fn create_system_user(){
-    let username = String::from("anthena");
-    let userpassword = String::new();
 }
