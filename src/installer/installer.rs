@@ -30,7 +30,6 @@ fn chek_postgres(){
             setup();
         }
         Ok(_) => {
-            println!("[INF]Postgresをインストール中...");
             install_postgres();
             setup();
         }
