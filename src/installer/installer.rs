@@ -1,9 +1,11 @@
 pub fn installer(){
     println!("インストールを実行します");//後で消します。
-    
-    println!("{logo}");
+    printwelcom();
+
 }
-let logo = r#"
+
+fn printwelcom(){
+    let logo = r#"
     ╔═══════════════════════════════════╗
     ║                                   ║
     ║          A N T H E N A            ║
@@ -14,3 +16,6 @@ let logo = r#"
     ║                                   ║
     ╚═══════════════════════════════════╝
     "#;
+
+    println!("{logo}")
+}
