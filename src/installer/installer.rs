@@ -51,6 +51,6 @@ fn install_postgres(){
     println!("Postgresをインストール中");
 }
 
-fn postgres_cheak_error(error: std::io::Error){
+fn postgres_cheak_error(_error: std::io::Error){
     eprintln!("インストール中二エラーが発生しました。");
 }
