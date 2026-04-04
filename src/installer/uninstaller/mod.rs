@@ -1,1 +1,1 @@
-pub mod unintall;
+pub mod uninstall;
