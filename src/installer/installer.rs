@@ -23,4 +23,5 @@ fn printwelcom(){
 
 fn chek_postgres(){
     //ここにデバイスにPostgresがインストールされているか確認するソースを書きます。
+    println!("[INF]お使いのデバイスにPostgreSQLがインストールされているかを確認中です。");
 }
