@@ -36,6 +36,7 @@ fn chek_postgres(){
         Err(e) => {
             if e.kind() == std::io::ErrorKind::NotFound {
                 install_postgres();
+                setup();
             } else {
                 postgres_cheak_error(e);
             }
