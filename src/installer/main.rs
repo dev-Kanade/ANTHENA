@@ -10,7 +10,7 @@ pub fn installer(installertype:i32){
     }else if installertype == 1 {
         updater::update();
     }else if installertype == 2 {
-        uninstaller::uninstall();
+        uninstaller::unintall::unintall();
     }else{
         eprintln!("インストーラーの起動に失敗しました。");
     }
