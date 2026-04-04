@@ -48,7 +48,6 @@ fn chek_postgres(){
 
 fn setup(){
     println!("[INF]システムのインストールを準備中です...");
-    create_system_user();
 }
 
 
