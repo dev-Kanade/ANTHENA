@@ -28,6 +28,7 @@ fn chek_postgres(){
     match Command::new("psql").arg("-V").output() {
         Ok(output) if output.status.success() => {
             setup();
+            install_postgres();
         }
         Ok(_) => {
             println!("[INF]Postgresをインストール中...");
@@ -69,6 +70,6 @@ fn install_postgres() {
     let _ = Command::new("sudo")
         .args(["systemctl", "start", "postgresql"])
         .output();
-        
+
     println!("[INF]PostgreSQLのインストールに成功しました。");
 }
