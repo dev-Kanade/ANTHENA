@@ -28,16 +28,16 @@ fn chek_postgres(){
     println!("[INF]お使いのデバイスにPostgreSQLがインストールされているかを確認中です。");
     match Command::new("psql").arg("-V").output() {
         Ok(output) if output.status.success() => {
-            function1();
+            setup();
         }
         Ok(_) => {
-            function2(); 
+            install_postgres(); 
         }
         Err(e) => {
             if e.kind() == std::io::ErrorKind::NotFound {
-                function2();
+                install_postgres();
             } else {
-                function3(e);
+                postgres_cheak_error(e);
             }
         }
     }
@@ -49,4 +49,8 @@ fn setup(){
 
 fn install_postgres(){
     println!("Postgresをインストール中");
+}
+
+fn postgres_cheak_error(error: std::io::Error){
+    eprintln!("インストール中二エラーが発生しました。");
 }
