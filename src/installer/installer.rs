@@ -1,5 +1,5 @@
 use std::process::Command;
-mod user;
+use user::create_system_user;
 pub fn installer(){
     printwelcom();
     chek_postgres();
