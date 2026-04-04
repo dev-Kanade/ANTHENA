@@ -1,16 +1,12 @@
-mod installer;
-mod uninstaller;
-mod updater;
-
 pub fn installer(installertype:i32){
     println!("Hello World!");
 
     if installertype == 0 {
-        installer::installer();
+        super::installer::installer();
     }else if installertype == 1 {
-        updater::update::update();
+        super::updater::update::update();
     }else if installertype == 2 {
-        uninstaller::uninstall::uninstall();
+        super::uninstaller::uninstall::uninstall();
     }else{
         eprintln!("インストーラーの起動に失敗しました。");
     }
