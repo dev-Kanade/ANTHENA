@@ -1,6 +1,5 @@
 pub fn installer(){
     printwelcom();
-
 }
 
 fn printwelcom(){
