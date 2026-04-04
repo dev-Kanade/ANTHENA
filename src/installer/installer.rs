@@ -46,10 +46,18 @@ fn setup(){
     println!("システムのインストールを準備中です...");
 }
 
-fn install_postgres(){
-    println!("Postgresをインストール中...");
-}
 
 fn postgres_cheak_error(_error: std::io::Error){
     eprintln!("インストール中にエラーが発生しました。");
+}
+
+
+fn install_postgres() {
+    let _ = Command::new("sudo")
+        .args(["apt", "update"])
+        .output();
+
+    let _ = Command::new("sudo")
+        .args(["apt", "install", "-y", "postgresql", "postgresql-contrib"])
+        .output();
 }
