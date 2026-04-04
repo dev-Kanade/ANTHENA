@@ -1,3 +1,3 @@
-pub fn installer(type:i32){
+pub fn installer(installertype:i32){
     println!("Hello World!");
 }
