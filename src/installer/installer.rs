@@ -52,5 +52,5 @@ fn install_postgres(){
 }
 
 fn postgres_cheak_error(_error: std::io::Error){
-    eprintln!("インストール中二エラーが発生しました。");
+    eprintln!("インストール中にエラーが発生しました。");
 }
