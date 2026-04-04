@@ -44,11 +44,11 @@ fn chek_postgres(){
 }
 
 fn setup(){
-    println!("インストール中です。");
+    println!("システムのインストールを準備中です...");
 }
 
 fn install_postgres(){
-    println!("Postgresをインストール中");
+    println!("Postgresをインストール中...");
 }
 
 fn postgres_cheak_error(_error: std::io::Error){
