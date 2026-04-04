@@ -1,5 +1,6 @@
 pub fn installer(){
     printwelcom();
+    chek_postgres();
 }
 
 fn printwelcom(){
@@ -21,5 +22,5 @@ fn printwelcom(){
 }
 
 fn chek_postgres(){
-    
+    //ここにデバイスにPostgresがインストールされているか確認するソースを書きます。
 }
