@@ -19,3 +19,7 @@ fn printwelcom(){
     println!("Welcom to ANTHENA Instaler!!");
     println!("[INF]ANTHENAインストーラーを起動しました。")
 }
+
+fn chek_postgres(){
+    
+}
