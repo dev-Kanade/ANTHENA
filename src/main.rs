@@ -6,7 +6,7 @@ fn main() {
     }else if cheak_system == false {
         installer::main::installer(0);
     }else{
-        println!("ANTHENA起動中にエラーが発生しました。");
+        println!("[INF]ANTHENA起動中にエラーが発生しました。");
     }
 }
 
