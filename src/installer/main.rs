@@ -2,7 +2,7 @@ use std::process::Command;
 
 pub fn installer(installertype:i32){
     let _ = Command::new("sudo")
-        .arge(["-l"])
+        .args(["-l"])
         .output();
     if installertype == 0 {
         super::installer::installer();
