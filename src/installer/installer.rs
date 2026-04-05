@@ -82,7 +82,7 @@ fn create_systemctl(){
     println!("[INF]Systemctlの設定を行っています....");
     //Systemctlの設定
     let systemname:&str = "anthenaauth.service";
-    println!("[INF]System名:{systemaname}");
+    println!("[INF]System名:{systemname}");
     let _ = Command::new("sudo")
         .args(["systemctl", "daemon-reload"])
         .output();//これ消すな絶対
