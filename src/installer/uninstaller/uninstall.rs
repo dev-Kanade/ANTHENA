@@ -4,4 +4,5 @@ pub fn uninstall(){
 
 fn del_systemctl(){
     println!("[INF]Systemctl設定をアンインストールしています。");
+    
 }

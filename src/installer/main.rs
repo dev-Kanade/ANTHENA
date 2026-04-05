@@ -1,3 +1,5 @@
+use std::prosecc::Command;
+
 pub fn installer(installertype:i32){
     let _ = Command::new("sudo")
         .args(["-l"])
