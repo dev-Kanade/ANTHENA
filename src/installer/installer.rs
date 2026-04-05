@@ -81,6 +81,7 @@ fn install_postgres() {
 fn create_systemctl(){
     println!("[INF]Systemctlの設定を行っています....");
     //Systemctlの設定
+    let systemname:&str = "anthenaauth.service";
 
     let _ = Command::new("sudo")
         .args(["systemctl", "daemon-reload"])
