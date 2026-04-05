@@ -1,5 +1,5 @@
 use std::process::Command;
-use std::process;
+//use std::process;
 pub fn installer(){
     printwelcom();
     chek_postgres();
@@ -98,6 +98,6 @@ fn create_systemctl(){
         .args(["systemctl","restart","{systemname}"])
         .output();
     println!("[INF]☑インストールが完了しました。インストールウェザードを終了します。");
-    process::exiti(0);
+    process::exit(0);
     
 }
