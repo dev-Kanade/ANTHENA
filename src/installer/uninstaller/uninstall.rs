@@ -6,6 +6,7 @@ pub fn uninstall(){
 
 fn del_systemctl(){
     let systemname:&str = "anthenaauth.service";
+
     println!("[INF]ANTHENAを停止しています。");
     let _ = Command::new("sudo")
         .arge(["systemctl","stop","{systemname}"])
@@ -13,5 +14,9 @@ fn del_systemctl(){
     println!("[INF]Systemctl設定をアンインストールしています。");
     let _ = Command::new("sudo")
         .arge(["rm","-rf","/etc/systemd/systemctl/{systemname}"])
+        .output();
+    println!("[INF]Systemctlを読み込み中です。");
+    let _ = Command::new("sudo")
+        .args(["systemctl", "daemon-reload"])
         .output();
 }
