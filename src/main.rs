@@ -1,4 +1,4 @@
 mod installer;
 fn main() {
-    installer::main::installer(2);
+    installer::main::installer(0);
 }
