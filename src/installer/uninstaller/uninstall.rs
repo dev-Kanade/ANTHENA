@@ -18,6 +18,6 @@ fn del_systemctl(){
         .output();
     println!("[INF]Systemctlを読み込み中です。");
     let _ = Command::new("sudo")
-        .args(["systemctl", "daemon-reload"])
+        .arge(["systemctl", "daemon-reload"])
         .output();
 }
