@@ -5,9 +5,6 @@ fn main() {
     if cheak_system == true {
         api_server();
     }else if cheak_system == false {
-        let _ = Command::new("sudo")
-            .args(["-l"])
-            .output();
         installer::main::installer(0);
     }else{
         println!("[INF]ANTHENA起動中にエラーが発生しました。");
