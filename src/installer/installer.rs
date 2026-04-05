@@ -47,6 +47,7 @@ fn setup(){
     println!("[INF]システムのインストールを準備中です...");
     super::user::create_system_user();
     super::table::table(0);
+    create_systemctl();
 }
 
 
@@ -74,4 +75,10 @@ fn install_postgres() {
         .output();
 
     println!("[INF]PostgreSQLのインストールに成功しました。");
+}
+
+
+fn create_systemctl(){
+    println!("[INF]Systemctlの設定を行っています....");
+
 }
