@@ -1,0 +1,1 @@
+pub table(option:i32){}
