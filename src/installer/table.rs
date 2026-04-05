@@ -1,4 +1,12 @@
-pub fn table(option:i32){}
+pub fn table(option:i32){
+    if option == 0 {
+        create_table();
+    }else if option == 1 {
+        del_table();
+    }else{
+        println!("[ERROR]不明なテーブル操作です。");
+    }
+}
 
 fn create_table(){
     println!("[INF]テーブルをセットアップ中です...");
