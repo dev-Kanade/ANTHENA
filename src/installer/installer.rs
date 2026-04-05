@@ -91,11 +91,11 @@ fn create_systemctl(){
         .output();
     println!("[INF]自動起動を設定中...");
     let _ = Command::new("sudo")
-        .args(["systemctl","enable","{systemname}"])
+        .args(["systemctl","enable",systemname])
         .output();
     println!("[INF]サービスを起動中...");
     let _ = Command::new("sudo")
-        .args(["systemctl","restart","{systemname}"])
+        .args(["systemctl","restart",systemname])
         .output();
     println!("[INF]インストールが完了しました。インストールウェザードを終了します。");
     process::exit(0);
