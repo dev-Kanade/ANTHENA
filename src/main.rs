@@ -5,7 +5,7 @@ fn main() {
     if cheak_system == true {
         api_server();
     }else if cheak_system == false {
-        installer::main::installer(0);
+        installer::main::installer(22);
     }else{
         println!("[INF]ANTHENA起動中にエラーが発生しました。");
     }
