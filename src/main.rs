@@ -13,7 +13,7 @@ fn main() {
 }
 
 fn cheak_anthena_system()-> bool {
-    true
+    false
 }
 
 fn api_server(){
