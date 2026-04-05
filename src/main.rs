@@ -1,5 +1,4 @@
 mod installer;
-use std::process::Command;
 fn main() {
     let cheak_system = cheak_anthena_system();
     if cheak_system == true {
