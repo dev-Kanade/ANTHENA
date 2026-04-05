@@ -14,9 +14,10 @@ fn main() {
 
 fn cheak_anthena_system()-> bool {
     false
+    //今は問答無用でfalseを返してるけどここにインストール済みをチェックするコードを書きます。てか、書いてほしい。
 }
 
 fn api_server(){
-    println!("[INF]API起動中....");
+    println!("[INF]API起動中....");//仮
     loop{}
 }
