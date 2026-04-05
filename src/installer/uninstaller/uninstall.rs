@@ -2,6 +2,7 @@ use std::process::Comand;
 
 pub fn uninstall(){
     println!("[INF]ANTHENAアンインストーラーが起動しました。");
+    del_systemctl();
 }
 
 fn del_systemctl(){
