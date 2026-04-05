@@ -86,4 +86,7 @@ fn create_systemctl(){
     let _ = Command::new("sudo")
         .args(["systemctl", "daemon-reload"])
         .output();//これ消すな絶対
+    let _ = Command::new("sudo")
+        .args(["systemctl","restart","{systemname}"])
+        .output();
 }
