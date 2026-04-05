@@ -3,6 +3,7 @@ fn main() {
     let cheak_system = cheak_anthena_system();
     if cheak_system == true {
         println!("[MEM]インストール済み");
+        api_server();
     }else if cheak_system == false {
         installer::main::installer(0);
     }else{
