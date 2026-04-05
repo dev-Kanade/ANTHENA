@@ -50,7 +50,7 @@ fn setup(){
 
 
 fn postgres_cheak_error(_error: std::io::Error){
-    eprintln!("[ERROR]インストール中にエラーが発生しました。");
+    eprintln!("[ERROR]Postgresの確認中にエラーが発生しました。");
 }
 
 
