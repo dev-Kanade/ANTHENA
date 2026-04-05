@@ -1,5 +1,5 @@
 use std::process::Command;
-//use std::process;
+use std::process;
 pub fn installer(){
     printwelcom();
     chek_postgres();
