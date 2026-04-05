@@ -8,7 +8,6 @@ fn main() {
     }else{
         println!("ANTHENA起動中にエラーが発生しました。");
     }
-    installer::main::installer(0);
 }
 
 fn cheak_anthena_system()-> bool {
