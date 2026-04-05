@@ -18,4 +18,5 @@ fn cheak_anthena_system()-> bool {
 
 fn api_server(){
     println!("[INF]API起動中....");
+    loop{}
 }
