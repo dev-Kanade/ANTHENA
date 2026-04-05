@@ -13,3 +13,7 @@ fn main() {
 fn cheak_anthena_system()-> bool {
     true
 }
+
+fn api_server(){
+    println!("[INF]API起動中....");
+}
