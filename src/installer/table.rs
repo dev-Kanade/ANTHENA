@@ -1,1 +1,2 @@
-pub table(option:i32){}
+pub fn table(option:i32){}
+
