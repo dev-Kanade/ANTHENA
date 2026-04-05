@@ -10,11 +10,11 @@ fn del_systemctl(){
 
     println!("[INF]ANTHENAを停止しています。");
     let _ = Command::new("sudo")
-        .args(["systemctl","stop","{systemname}"])
+        .args(["systemctl","stop",systemname])
         .output();
     println!("[INF]Systemctl設定をアンインストールしています。");
     let _ = Command::new("sudo")
-        .args(["rm","-rf","/etc/systemd/systemctl/{systemname}"])
+        .args(["rm","-rf","/etc/systemd/systemctl/",systemname])
         .output();
     println!("[INF]Systemctlを読み込み中です。");
     let _ = Command::new("sudo")
