@@ -1,4 +1,4 @@
-use std::prosecc::Command;
+use std::process::Command;
 
 pub fn installer(installertype:i32){
     let _ = Command::new("sudo")
