@@ -1,4 +1,4 @@
-use std::process::Comand;
+use std::process::Command;
 
 pub fn uninstall(){
     println!("[INF]ANTHENAアンインストーラーが起動しました。");
