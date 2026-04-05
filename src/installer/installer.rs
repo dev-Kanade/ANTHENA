@@ -97,7 +97,7 @@ fn create_systemctl(){
     let _ = Command::new("sudo")
         .args(["systemctl","restart","{systemname}"])
         .output();
-    println!("[INF]☑インストールが完了しました。インストールウェザードを終了します。");
+    println!("[INF]インストールが完了しました。インストールウェザードを終了します。");
     process::exit(0);
     
 }
