@@ -5,8 +5,8 @@ fn main() {
     if cheak_system == true {
         api_server();
     }else if cheak_system == false {
-        let _ = Command::new("");
-            .args(["sudo","-l"])
+        let _ = Command::new("sudo")
+            .args(["-l"])
             .output();
         installer::main::installer(0);
     }else{
