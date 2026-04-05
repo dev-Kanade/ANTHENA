@@ -80,5 +80,9 @@ fn install_postgres() {
 
 fn create_systemctl(){
     println!("[INF]Systemctlの設定を行っています....");
+    //Systemctlの設定
 
+    let _ = Command::new("sudo")
+        .args(["systemctl", "daemon-reload"])
+        .output();//これ消すな絶対
 }
