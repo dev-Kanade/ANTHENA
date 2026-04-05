@@ -97,5 +97,6 @@ fn create_systemctl(){
         .args(["systemctl","restart","{systemname}"])
         .output();
     println!("[INF]☑インストールが完了しました。インストールウェザードを終了します。");
+    process::exiti(0);
     
 }
