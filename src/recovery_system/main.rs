@@ -2,6 +2,7 @@ use std::process::Command;
 
 pub fn recovery(){
     //ここに壊れているファイルを検知するコードを書きます。
+    let state_postgres:bool = chek_postgres();
 }
 
 fn recovery_table(){
