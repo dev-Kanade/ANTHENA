@@ -13,3 +13,23 @@ fn recovery_config(){
 fn recovery_user(){
     //システムユーザーの修復
 }
+
+fn chek_postgres()-> bool{
+    match Command::new("psql").arg("-V").output() {
+        Ok(output) if output.status.success() => {
+            setup();
+        }
+        Ok(_) => {
+            install_postgres();
+            setup();
+        }
+        Err(e) => {
+            if e.kind() == std::io::ErrorKind::NotFound {
+                install_postgres();
+                setup();
+            } else {
+                postgres_cheak_error(e);
+            }
+        }
+    }
+}
