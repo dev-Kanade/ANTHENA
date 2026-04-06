@@ -30,4 +30,9 @@ fn ceak_postgres() -> bool {
             false
         }
     }
+    //現在はDefaultポートのみだが、今後は.envから読み取れるようにする。
+}
+
+fn recovery_postgres(){
+    //ここではPostgreSQLの回復環境を呼び出す予定です。
 }
