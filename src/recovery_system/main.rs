@@ -14,7 +14,7 @@ fn recovery_user(){
     //システムユーザーの修復
 }
 
-pub fn is_postgres_healthy() -> bool {
+fn ceak_postgres() -> bool {
     let output = Command::new("pg_isready")
         .args(["-h", "localhost", "-p", "5432"])  
         .output();
