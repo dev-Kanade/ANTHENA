@@ -11,7 +11,7 @@ fn printwelcom(){
     ║                                   ║
     ║          A N T H E N A            ║
     ║                                   ║    
-    ║        認証・認可システム         ║
+    ║        認証・認可システム           ║
     ║                                   ║
     ║     Authentication & Auth.        ║
     ║                                   ║
