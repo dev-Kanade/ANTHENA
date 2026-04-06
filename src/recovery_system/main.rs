@@ -1,3 +1,4 @@
-pub recovery(){
+pub fn recovery(){
     //ここに壊れているファイルを検知するコードを書きます。
 }
+
