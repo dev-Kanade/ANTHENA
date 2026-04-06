@@ -14,22 +14,20 @@ fn recovery_user(){
     //システムユーザーの修復
 }
 
-fn chek_postgres()-> bool{
-    match Command::new("psql").arg("-V").output() {
-        Ok(output) if output.status.success() => {
-            setup();
+pub fn is_postgres_healthy() -> bool {
+    let output = Command::new("pg_isready")
+        .args(["-h", "localhost", "-p", "5432"])  
+        .output();
+
+    match output {
+        Ok(o) if o.status.success() => {
+            true
         }
-        Ok(_) => {
-            install_postgres();
-            setup();
+        Ok(o) => {
+            false
         }
         Err(e) => {
-            if e.kind() == std::io::ErrorKind::NotFound {
-                install_postgres();
-                setup();
-            } else {
-                postgres_cheak_error(e);
-            }
+            false
         }
     }
 }
