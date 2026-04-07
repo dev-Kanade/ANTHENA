@@ -22,14 +22,17 @@ fn cheak_anthena_system()-> bool {
 }
 #[actix_web::main]
 async fn api_server()->std::io::Result<()>{
+    /*
     HttpServer::new(||{
         App::new()
     })
     .bind("0.0.0.0::8080")?
     .run()
     .await;
+    */
     println!("[INF]API起動中....");//仮
-    loop{}
+    loop{}//まぁ、APIが起動している風でいいでしょ今は
+    
 }
 
 fn cheak_os()->bool {
