@@ -59,6 +59,7 @@ fn setup(){
 fn postgres_cheak_error(_error: std::io::Error){
     eprintln!("[ERROR]Postgresの確認中にエラーが発生しました。");
     eprintln!("[INF]インストーラーを停止します。");
+    process::exit(1);
 }
 
 
