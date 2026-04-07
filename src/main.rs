@@ -19,3 +19,7 @@ fn api_server(){
     println!("[INF]API起動中....");//仮
     loop{}
 }
+
+fn cheak_os()->bool {
+    //メモ:対応OSかどうかのみboolで返します。
+}
