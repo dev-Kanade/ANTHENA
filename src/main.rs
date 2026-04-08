@@ -34,4 +34,5 @@ async fn api_server()->std::io::Result<()>{
 
 fn cheak_os()->bool {
     //メモ:対応OSかどうかのみboolで返します。
+    true
 }
