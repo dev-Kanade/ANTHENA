@@ -21,7 +21,7 @@ fn cheak_anthena_system()-> bool {
     //今は問答無用でfalseを返してるけどここにインストール済みをチェックするコードを書きます。てか、書いてほしい。
 }
 #[actix_web::main]
-async fn api_server()->std::io::Result<()>(){
+async fn api_server()->std::io::Result<()>{
     HttpServer::new(||{
         App::new()
     })
