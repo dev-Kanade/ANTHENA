@@ -27,7 +27,7 @@ async fn api_server()->std::io::Result<()>{
     })
     .bind("0.0.0.0::8080")?
     .run()
-    .await
+    .await;
     println!("[INF]API起動中....");//仮
     loop{}
 }
