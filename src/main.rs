@@ -25,7 +25,7 @@ async fn api_server()->std::io::Result<()>{
     HttpServer::new(||{
         App::new()
     })
-    .bind::("0.0.0.0::8080")?
+    .bind:("0.0.0.0::8080")?
     .run()
     .await
     println!("[INF]API起動中....");//仮
