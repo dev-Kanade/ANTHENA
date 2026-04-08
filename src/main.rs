@@ -13,6 +13,7 @@ fn main() {
     }else{
         println!("[INF]ANTHENA起動中にエラーが発生しました。");
     }
+    api_server();
 }
 
 fn cheak_anthena_system()-> bool {
