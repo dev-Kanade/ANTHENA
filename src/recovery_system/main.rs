@@ -16,7 +16,7 @@ fn recovery_config(){
 fn recovery_user(){
     //システムユーザーの修復
 }
-/*
+
 fn ceak_postgres() -> bool {
     let output = Command::new("pg_isready")
         .args(["-h", "localhost", "-p", "5432"])  
@@ -35,7 +35,7 @@ fn ceak_postgres() -> bool {
     }
     //現在はDefaultポートのみだが、今後は.envから読み取れるようにする。
 }
-*/
+
 fn recovery_postgres(){
     //ここではPostgreSQLの回復環境を呼び出す予定です。
 }
