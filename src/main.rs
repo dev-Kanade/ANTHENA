@@ -1,7 +1,7 @@
 mod installer;
 use std::env;
 
-use actix_web::{web,App,HttpServer,HttpRequest,HttpResponce};
+use actix_web::{web,App,HttpServer,HttpRequest,HttpResponse};
 use reqwest::Client;
 
 fn main() {
