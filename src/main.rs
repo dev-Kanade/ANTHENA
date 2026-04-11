@@ -1,8 +1,6 @@
 mod installer;
 use std::env;
 
-use actix_web::{web,App,HttpServer,HttpRequest,HttpResponse};
-use reqwest::Client;
 
 fn main() {
     let cheak_system = cheak_anthena_system();
@@ -19,23 +17,4 @@ fn main() {
 fn cheak_anthena_system()-> bool {
     false
     //今は問答無用でfalseを返してるけどここにインストール済みをチェックするコードを書きます。てか、書いてほしい。
-}
-#[actix_web::main]
-async fn api_server()->std::io::Result<()>{
-    /*
-    HttpServer::new(||{
-        App::new()
-    })
-    .bind("0.0.0.0::8080")?
-    .run()
-    .await;
-    */
-    println!("[INF]API起動中....");//仮
-    loop{}//まぁ、APIが起動している風でいいでしょ今は
-    
-}
-
-fn cheak_os()->bool {
-    //メモ:対応OSかどうかのみboolで返します。
-    true
 }
