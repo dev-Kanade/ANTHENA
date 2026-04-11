@@ -26,11 +26,11 @@ pub fn create_system_user(){
             println!("[INF]システムユーザーを作成しました。");
         }
         Ok(s) => {
-            eprintln!("[ERROR]システムユーザーの作成に失敗しました。{s}");
+            eprintln!("[ERROR]システムユーザーの作成に失敗しました。");
             process::exit(1);
         }
         Err(e) => {
-            eprintln!("[ERROR]システムユーザーの作成に失敗しました。{e}");
+            eprintln!("[ERROR]システムユーザーの作成に失敗しました。");
             process::exit(1);
         }
     }
