@@ -1,4 +1,4 @@
-use tokio_postgres::{NoTls,Error};
+use tokio_postgres::{Client,NoTls,Error};
 
 #[tokio::main]
 pub async fn table(option:i32){
