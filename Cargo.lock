@@ -276,7 +276,7 @@ dependencies = [
 
 [[package]]
 name = "anthena"
-version = "0.0.22"
+version = "0.1.22"
 dependencies = [
  "actix-web",
  "anyhow",
