@@ -14,4 +14,6 @@ fn create_pass()-> String {
         .take(10)
         .map(char::from)
         .collect();
+
+    pass
 }
