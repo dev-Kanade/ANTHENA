@@ -1,5 +1,6 @@
 use tokio_postgre::{NoTls,Error};
 
+#[tokio::main]
 pub fn table(option:i32){
     if option == 0 {
         create_table();
