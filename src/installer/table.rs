@@ -19,9 +19,6 @@ fn create_table(){
 fn del_table(){
     println!("[INF]テーブルを削除中です...");
 }
-fn create_db(){
-    
-}
 /* 以下の変数の値や変数名は変更しないでください。変更した場合、システムが動かなくなる可能性があります。 */
 
 const _CLIENT:&str = "anthena_client_list";
@@ -32,7 +29,3 @@ const _ANTHENA_CONFIG:&str = "anthena_config";
 /* ==================== */
 
 /* ここから下は各テーブルを作成する関数を定義します。 */
-
-fn main(){
-    
-}
