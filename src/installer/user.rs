@@ -1,6 +1,8 @@
 use rand::Rng;
 use std::process::Command;
 
+const SYSTEM_USERNAME:&str = "ANTHENA";
+
 pub fn create_system_user(){
     println!("[MEM]この関数でUbuntuのユーザーを作成します。");
     /*
@@ -21,4 +23,3 @@ fn create_pass()-> String {
 
     pass
 }
-
