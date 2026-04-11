@@ -112,7 +112,7 @@ fn create_systemctl(){
 }
 
 fn confirmation_os()->&str{
-    let os:&ste = env::consts::OS;
+    let os:&str = env::consts::OS;
     os
 }
 
