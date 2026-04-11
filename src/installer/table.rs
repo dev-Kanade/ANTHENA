@@ -18,3 +18,7 @@ fn del_table(){
 }
 
 /* 以下の変数の値や変数名は変更しないでください。変更した場合、システムが動かなくなる可能性があります。 */
+
+const CLIENT:&str = "anthena_client_list";
+const ACCESSTOKEN:&str = "anthena_accesstoken";
+const LONG_TOKEN:&str = "anthena_long_token";
