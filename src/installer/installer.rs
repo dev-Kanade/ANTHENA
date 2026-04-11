@@ -111,9 +111,9 @@ fn create_systemctl(){
     
 }
 
-fn confirmation_os()->&str{
+fn allow_install()->bool{
     let os:&str = env::consts::OS;
-    os
+    true
 }
 
 /* Debian系のAPTパッケージが扱えるOSのみ対応 */
