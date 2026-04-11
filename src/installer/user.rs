@@ -34,6 +34,7 @@ pub fn create_system_user(){
             eprintln!("[ERROR]システムユーザーの作成に失敗しました。");
             process::exit(1);
         }
+    }
 }
 
 
