@@ -115,3 +115,5 @@ fn confirmation_os()->&str{
     let os:&ste = env::consts::OS;
     os
 }
+
+/* Debian系のAPTパッケージが扱えるOSのみ対応 */
