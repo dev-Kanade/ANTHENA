@@ -1,5 +1,5 @@
 mod installer;
-use std::env;
+//use std::env;
 
 
 fn main() {
