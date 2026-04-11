@@ -11,6 +11,16 @@ pub fn create_system_user(){
     */
     let user_password:String = create_pass();
     println!("生成したパスワード:{user_password}");
+
+    let create = Command::new("useradd")
+        .args([
+            "--system",
+            "--no-create-home",
+            "--shell",
+            "/usr/sbin/nologin",
+            SYSTEM_USERNAME
+        ])
+        .status();
 }
 
 
