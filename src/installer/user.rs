@@ -23,14 +23,14 @@ pub fn create_system_user(){
         ])
         .status();
     match create {
-        Ok(s) if s.success() => {
+        Ok(_s) if s.success() => {
             println!("[INF]システムユーザーを作成しました。");
         }
-        Ok(s) => {
+        Ok(_s) => {
             eprintln!("[ERROR]システムユーザーの作成に失敗しました。");
             process::exit(1);
         }
-        Err(e) => {
+        Err(_e) => {
             eprintln!("[ERROR]システムユーザーの作成に失敗しました。");
             process::exit(1);
         }
