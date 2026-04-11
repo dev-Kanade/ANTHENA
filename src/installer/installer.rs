@@ -2,6 +2,7 @@ use std::process::Command;
 use std::process;
 use std::env;
 pub fn installer(){
+    confirmation_os();
     printwelcom();
     chek_postgres();
 }
@@ -110,5 +111,6 @@ fn create_systemctl(){
 }
 
 fn confirmation_os()->&str{
-
+    const OS:&str = env::consts::OS;
+    println!("{OS}");
 }
