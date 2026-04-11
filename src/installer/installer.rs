@@ -121,12 +121,13 @@ fn allow_install()->bool{
     let os:&str = env::consts::OS;
     println!("{os}");
     if(os == "linux"){
-        Command::new("command")
-           .arg("apt")
-           .arg("-v")
-           .output()
-           .map(|output| output.status.success())
-           .unwrap_or(false)
+        let apt_available: bool = Command::new("command")
+            .arg("-v")
+            .arg("apt")
+            .output()
+            .map(|output| output.status.success())
+            .unwrap_or(false);
+        apt_available
     }else{
         false
     }
