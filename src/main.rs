@@ -1,6 +1,6 @@
 mod installer;
 //use std::env;
-use calp::{Parser,SubCommand};
+use clap::{Parser,SubCommand};
 
 #[derive[Parser]]
 fn main() {
