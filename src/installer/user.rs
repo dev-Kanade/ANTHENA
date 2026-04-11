@@ -1,4 +1,6 @@
 use rand::Rng;
+use std::process::Command;
+
 pub fn create_system_user(){
     println!("[MEM]この関数でUbuntuのユーザーを作成します。");
     /*
@@ -19,3 +21,4 @@ fn create_pass()-> String {
 
     pass
 }
+
