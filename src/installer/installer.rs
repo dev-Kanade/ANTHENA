@@ -135,3 +135,5 @@ fn allow_install()->bool{
 }
 
 /* Debian系のAPTパッケージが扱えるOSのみ対応 */
+
+//メモ:apt -v ではなく、apt update APTパッケージが使われているかを確認します。
