@@ -23,7 +23,7 @@ pub fn create_system_user(){
         ])
         .status();
     match create {
-        Ok(_s) if s.success() => {
+        Ok(s) if s.success() => {
             println!("[INF]システムユーザーを作成しました。");
         }
         Ok(_s) => {
