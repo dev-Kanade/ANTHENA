@@ -3,8 +3,15 @@ use std::process;
 use std::env;
 pub fn installer(){
     let allow:bool = allow_install();
-    printwelcom();
-    chek_postgres();
+    if allow == true {
+        printwelcom();
+        chek_postgres();
+    }else if allow ==false {
+        println!("お使いのデバイスはANTHENAをインストールする要件が不足しています。");
+        process::exit(0);
+    }else{
+        println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
+    }
 }
 /*
 インストーラーを書く人へ
