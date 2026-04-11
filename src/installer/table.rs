@@ -24,10 +24,10 @@ fn create_db(){
 }
 /* 以下の変数の値や変数名は変更しないでください。変更した場合、システムが動かなくなる可能性があります。 */
 
-const CLIENT:&str = "anthena_client_list";
-const ACCESSTOKEN:&str = "anthena_accesstoken";
-const LONG_TOKEN:&str = "anthena_long_token";
-const ANTHENA_CONFIG:&str = "anthena_config";
+const _CLIENT:&str = "anthena_client_list";
+const _ACCESSTOKEN:&str = "anthena_accesstoken";
+const _LONG_TOKEN:&str = "anthena_long_token";
+const _ANTHENA_CONFIG:&str = "anthena_config";
 
 /* ==================== */
 
