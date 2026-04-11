@@ -1,5 +1,5 @@
-use tokio_postgres::{Client,NoTls,Error};
-
+//use tokio_postgres::{Client,NoTls,Error};
+/*
 #[tokio::main]
 pub async fn table(option:i32){
     if option == 0 {
@@ -29,3 +29,4 @@ const _ANTHENA_CONFIG:&str = "anthena_config";
 /* ==================== */
 
 /* ここから下は各テーブルを作成する関数を定義します。 */
+*/
