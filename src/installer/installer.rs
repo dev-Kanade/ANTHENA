@@ -113,7 +113,11 @@ fn create_systemctl(){
 fn allow_install()->bool{
     let os:&str = env::consts::OS;
     println!("{os}");
-    true
+    if(os == "linux"){
+        true
+    }else{
+        false
+    }
 }
 
 /* Debian系のAPTパッケージが扱えるOSのみ対応 */
