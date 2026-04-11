@@ -1,4 +1,4 @@
-use tokio_postgre::{NoTls,Error};
+use tokio_postgres::{NoTls,Error};
 
 #[tokio::main]
 pub fn table(option:i32){
