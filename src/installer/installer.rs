@@ -126,7 +126,7 @@ fn allow_install()->bool{
            .arg("apt")
            .output()
            .map(|output| output.status.success())
-           .unwrap_or(true)
+           .unwrap_or(false)
     }else{
         false
     }
