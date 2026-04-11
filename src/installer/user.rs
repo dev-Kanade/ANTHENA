@@ -27,10 +27,12 @@ pub fn create_system_user(){
         }
         Ok(_s) => {
             eprintln!("[ERROR]システムユーザーの作成に失敗しました。");
+            eprintln!("[ERROR]インストーラーを終了します。");
             process::exit(1);
         }
         Err(_e) => {
             eprintln!("[ERROR]システムユーザーの作成に失敗しました。");
+            eprintln!("[ERROR]インストーラーを終了します。");
             process::exit(1);
         }
     }
