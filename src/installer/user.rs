@@ -1,5 +1,6 @@
 use rand::Rng;
 use std::process::Command;
+use std::process;
 
 const SYSTEM_USERNAME:&str = "ANTHENA";
 
@@ -21,6 +22,17 @@ pub fn create_system_user(){
             SYSTEM_USERNAME
         ])
         .status();
+    match status {
+        Ok(s) if s.success() => {
+            println!("[INF]システムユーザーを作成しました。");
+        }
+        Ok(s) => {
+            eprintln!("[ERROR]システムユーザーの作成に失敗しました。");
+            process::exit(1);
+        }
+        Err(e) => {
+            eprintln!("❌ useradd の実行に失敗: {}", e);
+        }
 }
 
 
