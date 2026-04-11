@@ -121,7 +121,7 @@ fn allow_install()->bool{
     let os:&str = env::consts::OS;
     println!("{os}");
     if(os == "linux"){
-        let apt_available: bool = Command::new()
+        let apt_available: bool = Command::new("")
             .arg("apt")
             .arg("-v")
             .output()
