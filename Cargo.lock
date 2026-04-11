@@ -229,6 +229,7 @@ name = "anthena"
 version = "0.1.0"
 dependencies = [
  "actix-web",
+ "anyhow",
  "dotenv",
  "rand 0.8.5",
  "reqwest",

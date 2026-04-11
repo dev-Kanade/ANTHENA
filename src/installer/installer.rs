@@ -110,7 +110,7 @@ fn create_systemctl(){
     
 }
 
-fn confirmation_os()->&str{
+fn confirmation_os(){
     const OS:&str = env::consts::OS;
     println!("{OS}");
 }
