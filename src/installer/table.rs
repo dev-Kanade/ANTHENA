@@ -25,3 +25,6 @@ const LONG_TOKEN:&str = "anthena_long_token";
 const ANTHENA_CONFIG:&str = "anthena_config";
 
 /* ==================== */
+
+/* ここから下は各テーブルを作成する関数を定義します。 */
+
