@@ -1,7 +1,7 @@
 use tokio_postgres::{NoTls,Error};
 
 #[tokio::main]
-pub fn table(option:i32){
+pub async fn table(option:i32){
     if option == 0 {
         create_table();
     }else if option == 1 {
