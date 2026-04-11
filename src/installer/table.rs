@@ -10,8 +10,11 @@ pub fn table(option:i32){
 
 fn create_table(){
     println!("[INF]テーブルをセットアップ中です...");
+    
 }
 
 fn del_table(){
     println!("[INF]テーブルを削除中です...");
 }
+
+/* 以下の変数の値や変数名は変更しないでください。変更した場合、システムが動かなくなる可能性があります。 */
