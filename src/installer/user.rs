@@ -6,3 +6,8 @@ pub fn create_system_user(){
         .args(["adduser",""])
     */
 }
+
+
+fn create_pass()->&str{
+    
+}
