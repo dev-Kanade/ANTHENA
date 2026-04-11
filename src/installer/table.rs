@@ -32,5 +32,5 @@ const ANTHENA_CONFIG:&str = "anthena_config";
 /* ここから下は各テーブルを作成する関数を定義します。 */
 
 fn main()->&str{
-
+    "仮"
 }
