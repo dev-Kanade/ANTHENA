@@ -111,6 +111,7 @@ fn create_systemctl(){
     
 }
 
-fn confirmation_os()->String{
-    env::consts::OS
+fn confirmation_os()->&str{
+    let os:&ste = env::consts::OS;
+    os
 }
