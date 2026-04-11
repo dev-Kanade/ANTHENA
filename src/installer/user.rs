@@ -31,7 +31,8 @@ pub fn create_system_user(){
             process::exit(1);
         }
         Err(e) => {
-            eprintln!("❌ useradd の実行に失敗: {}", e);
+            eprintln!("[ERROR]システムユーザーの作成に失敗しました。");
+            process::exit(1);
         }
 }
 
