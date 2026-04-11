@@ -2,7 +2,7 @@ use std::process::Command;
 use std::process;
 use std::env;
 pub fn installer(){
-    let os = allow_install();
+    let _os = allow_install();
     printwelcom();
     chek_postgres();
 }
