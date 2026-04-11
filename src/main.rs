@@ -1,8 +1,6 @@
 mod installer;
 //use std::env;
-use clap::{Parser,SubCommand};
 
-#[derive[Parser]]
 fn main() {
     let cheak_system = cheak_anthena_system();
     if cheak_system == true {
