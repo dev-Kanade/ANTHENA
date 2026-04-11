@@ -22,3 +22,5 @@ fn del_table(){
 const CLIENT:&str = "anthena_client_list";
 const ACCESSTOKEN:&str = "anthena_accesstoken";
 const LONG_TOKEN:&str = "anthena_long_token";
+
+/* ==================== */
