@@ -1,6 +1,7 @@
 use std::process::Command;
 use std::process;
 use std::env;
+
 pub fn installer(){
     let allow:bool = allow_install();
     if allow == true {
@@ -14,11 +15,13 @@ pub fn installer(){
         process::exit(1);
     }
 }
+
 /*
 インストーラーを書く人へ
 今はUbuntuしかサポートしていません。
 今後別のディストリビューションへのサポートや別のOSへのサポートをする場合、OS検知と、サポート外OSへのインストール拒否を実装してください。
 */
+
 fn printwelcom(){
     let logo = r#"
     ╔═══════════════════════════════════╗
