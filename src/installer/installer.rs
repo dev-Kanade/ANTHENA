@@ -66,7 +66,7 @@ fn chek_postgres(){
 fn setup(){
     println!("[INF]システムのインストールを準備中です...");
     super::user::create_system_user();
-   // super::table::table(0);
+    super::table::create_table();
     create_systemctl();
 }
 
