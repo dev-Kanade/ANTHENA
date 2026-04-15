@@ -11,6 +11,7 @@ pub fn installer(){
         process::exit(0);
     }else{
         println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
+        process::exit(1);
     }
 }
 /*
