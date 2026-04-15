@@ -136,3 +136,7 @@ fn allow_install()->bool{
         false
     }
 }
+
+fn db(){
+    println!("ここでDBに関する操作がおこなわれます。");
+}
