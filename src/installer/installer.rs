@@ -61,6 +61,8 @@ fn chek_postgres(){
     }
 }
 
+
+//ANTHENAのインストール各処理
 fn setup(){
     println!("[INF]システムのインストールを準備中です...");
     super::user::create_system_user();
