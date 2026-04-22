@@ -150,4 +150,7 @@ fn create_db(){
 }
 
 
-fn user_exists(username:&str){}
+fn user_exists(username:&str)->io::Result<bool>{
+    let file = fs::File::Open("/etc/passwd")?;
+
+}
