@@ -2,6 +2,8 @@ use std::process::Command;
 use std::process;
 use std::env;
 
+const SYSTEM_USERNAME:&str = "ANTHENA";
+
 pub fn installer(){
     let allow:bool = allow_install();
     if allow == true {
