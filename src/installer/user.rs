@@ -5,10 +5,6 @@ use std::process;
 const SYSTEM_USERNAME:&str = "ANTHENA";
 
 pub fn create_system_user(){
-    /*
-    let _ = Command::new("sudo")
-        .args(["adduser",""])
-    */
     let user_password:String = create_pass();
     println!("生成したパスワード:{user_password}");
 
