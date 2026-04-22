@@ -141,6 +141,7 @@ fn allow_install()->bool{
     }
 }
 
+const DBNAME:&str = "";
 fn create_db(){
     println!("ここでDBに関する操作がおこなわれます。");
     //既存のDBに接続する必要があるため、パスワードがあったらな
