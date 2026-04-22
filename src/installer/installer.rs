@@ -143,4 +143,5 @@ fn allow_install()->bool{
 
 fn create_db(){
     println!("ここでDBに関する操作がおこなわれます。");
+    //既存のDBに接続する必要があるため、パスワードがあったらな
 }
