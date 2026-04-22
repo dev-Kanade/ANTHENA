@@ -105,7 +105,7 @@ fn create_systemctl(){
 
     let systemname:&str = "anthenaauth.service";
     println!("[INF]System名:{systemname}");
-
+    //この下か上にsystemctlを書く処理を実装する
     println!("[INF]サービスを読み込み中");
     let _ = Command::new("sudo")
         .args(["systemctl", "daemon-reload"])
