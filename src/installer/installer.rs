@@ -1,26 +1,45 @@
 use std::process::Command;
 use std::process;
+use std::env;
+use tokio;
+use tokio_postgres::{NoTls,Error};
+use std::fs;
+use std::io::{self,BufRead};
+
+const SYSTEM_USERNAME:&str = "ANTHENA";
+
 pub fn installer(){
-    printwelcom();
-    chek_postgres();
+    let allow:bool = allow_install();
+    if allow == true {
+        printwelcom();
+        chek_postgres();
+    }else if allow ==false {
+        println!("お使いのデバイスはANTHENAをインストールする要件が不足しています。");
+        process::exit(0);
+    }else{
+        println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
+        process::exit(1);
+    }
 }
+
 /*
 インストーラーを書く人へ
 今はUbuntuしかサポートしていません。
 今後別のディストリビューションへのサポートや別のOSへのサポートをする場合、OS検知と、サポート外OSへのインストール拒否を実装してください。
 */
+
 fn printwelcom(){
     let logo = r#"
     ╔═══════════════════════════════════╗
     ║                                   ║
     ║          A N T H E N A            ║
     ║                                   ║    
-    ║        認証・認可システム           ║
+    ║        認証・認可システム         ║
     ║                                   ║
     ║     Authentication & Auth.        ║
     ║                                   ║
     ╚═══════════════════════════════════╝
-    "#;
+    "#;//絶対に手を加えないで
 
     println!("{logo}");
     println!("Welcom to ANTHENA Instaler!!");
@@ -48,10 +67,12 @@ fn chek_postgres(){
     }
 }
 
+
+//ANTHENAのインストール各処理
 fn setup(){
     println!("[INF]システムのインストールを準備中です...");
     super::user::create_system_user();
-    super::table::table(0);
+    super::table::create_table();
     create_systemctl();
 }
 
@@ -90,7 +111,7 @@ fn create_systemctl(){
 
     let systemname:&str = "anthenaauth.service";
     println!("[INF]System名:{systemname}");
-
+    //この下か上にsystemctlを書く処理を実装する
     println!("[INF]サービスを読み込み中");
     let _ = Command::new("sudo")
         .args(["systemctl", "daemon-reload"])
@@ -106,4 +127,41 @@ fn create_systemctl(){
     println!("[INF]インストールが完了しました。インストールウェザードを終了します。");
     process::exit(0);
     
+}
+
+fn allow_install()->bool{
+    let os:&str = env::consts::OS;
+    if os == "linux" {
+        let apt_available: bool = Command::new("which")
+            .arg("apt")
+            .output()
+            .map(|output| output.status.success())
+            .unwrap_or(false);
+        apt_available
+    }else{
+        false
+    }
+}
+
+const DBNAME:&str = "";
+fn create_db(){
+    println!("ここでDBに関する操作がおこなわれます。");
+    //既存のDBに接続する必要があるため、パスワードがあったらな
+}
+
+
+fn user_exists(username:&str)->io::Result<bool>{
+    let file = fs::File::Open("/etc/passwd")?;
+
+    let reader = io::BufReader::new(file);
+
+    for line in reader.lines(){
+        let line = line?;
+        if let Some(name) = line.split(":").next(){
+            if name == username { 
+                return OK(true);
+            }
+        }
+    }
+    OK(false)
 }

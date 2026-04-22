@@ -1,17 +1,10 @@
-pub fn table(option:i32){
-    if option == 0 {
-        create_table();
-    }else if option == 1 {
-        del_table();
-    }else{
-        println!("[ERROR]不明なテーブル操作です。");
-    }
-}
+/*
+    このファイル内に、DBのテーブルの作成、修復、削除、アップデート
+    に関するコードを書きます。
+    まだ現時点でANTHENA自体の設計図を作っている途中なので
+    現在はprintln!だけ実装しています-_-
+*/
 
-fn create_table(){
-    println!("[INF]テーブルをセットアップ中です...");
-}
-
-fn del_table(){
-    println!("[INF]テーブルを削除中です...");
+pub fn create_table(){
+    println!("[DEBUG]ここでは、テーブルに関する処理をおこないますが、現在はメモが出力されています。");
 }
