@@ -153,4 +153,15 @@ fn create_db(){
 fn user_exists(username:&str)->io::Result<bool>{
     let file = fs::File::Open("/etc/passwd")?;
 
+    let reader = io::BufReader::new(file);
+
+    for line in reader.lines(){
+        let line = line?;
+        if let Some(name) = line.split(":").next(){
+            if name == username { 
+                return OK(true);
+            }
+        }
+    }
+    OK(false)
 }
