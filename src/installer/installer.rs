@@ -4,7 +4,7 @@ use std::env;
 use tokio;
 use tokio_postgres::{NoTls,Error};
 use std::fs;
-use std::io;
+use std::io::BufRead;
 
 const SYSTEM_USERNAME:&str = "ANTHENA";
 
@@ -171,7 +171,7 @@ fn install_method()->i32{
     println!("ANTHENAをインストールする方法を選択してください。\n1.)推奨される構成で自動インストール\n2.)カスタムインストール");
     
     let mut input = String::new();
-    io::stdin()
+    i8::stdin()
         .read_line(&mut input)
         .expect("[ERROR]インストーラー起動中にエラーが発生しました。");
 
