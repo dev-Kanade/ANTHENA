@@ -17,7 +17,7 @@ pub fn installer(){
             println!("エラー");
             process::exit(1);
         }
-    },
+    }
     let allow:bool = allow_install();
     if allow == true {
         printwelcom();
