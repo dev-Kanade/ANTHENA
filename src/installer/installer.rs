@@ -4,7 +4,6 @@ use std::env;
 use tokio;
 use tokio_postgres::{NoTls,Error};
 use std::fs;
-use std::io::{self,BufRead};
 use std::io;
 
 const SYSTEM_USERNAME:&str = "ANTHENA";
