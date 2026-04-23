@@ -165,3 +165,7 @@ fn user_exists(username:&str)->io::Result<bool>{
     }
     Ok(false)
 }
+
+fn install_method()->i32{
+    
+}
