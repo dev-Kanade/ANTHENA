@@ -152,6 +152,7 @@ fn create_db(){
 
 
 fn user_exists(username:&str)->io::Result<bool>{
+    /*
     let file = fs::File::open("/etc/passwd")?;
 
     let reader = io::BufReader::new(file);
@@ -165,6 +166,8 @@ fn user_exists(username:&str)->io::Result<bool>{
         }
     }
     Ok(false)
+    */
+    true
 }
 
 fn install_method()->i32{
