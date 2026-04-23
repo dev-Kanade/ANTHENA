@@ -1,15 +1,15 @@
 use std::process::Command;
 use std::process;
 use std::env;
-use tokio;
-use tokio_postgres::{NoTls,Error};
+use _tokio;
+use _tokio_postgres::{NoTls,Error};
 use std::fs;
 use std::io;
 
-const SYSTEM_USERNAME:&str = "ANTHENA";
+const _SYSTEM_USERNAME:&str = "ANTHENA";
 
 pub fn installer(){
-    
+
     match install_method(){
         1 => println!("自動インストール"),
         2 => println!("カスタムインストール"),
@@ -152,14 +152,14 @@ fn allow_install()->bool{
     }
 }
 
-const DBNAME:&str = "";
-fn create_db(){
+const _DBNAME:&str = "";
+fn _create_db(){
     println!("ここでDBに関する操作がおこなわれます。");
     //既存のDBに接続する必要があるため、パスワードがあったらな
 }
 
 
-fn user_exists(username:&str)->io::Result<bool>{
+fn _user_exists(username:&str)->io::Result<bool>{
     /*
     let file = fs::File::open("/etc/passwd")?;
 
