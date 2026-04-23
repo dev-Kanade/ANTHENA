@@ -171,7 +171,7 @@ fn user_exists(username:&str)->io::Result<bool>{
 }
 
 fn install_method()->i32{
-    println!("ANTHENAをインストールする方法を選択してください。\n1.)推奨される構成で自動インストール\n2.)カスタムインストール");
+    println!("ANTHENAをインストールする方法を選択してください。\n1.)推奨される構成で自動インストール\n2.)カスタムインストール\n\n");
     
     let mut input = String::new();
     io::stdin()
