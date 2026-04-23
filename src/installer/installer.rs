@@ -1,8 +1,6 @@
 use std::process::Command;
 use std::process;
 use std::env;
-use _tokio;
-use _tokio_postgres::{NoTls,Error};
 use std::fs;
 use std::io;
 
