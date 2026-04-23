@@ -159,9 +159,9 @@ fn user_exists(username:&str)->io::Result<bool>{
         let line = line?;
         if let Some(name) = line.split(":").next(){
             if name == username { 
-                return OK(true);
+                return Ok(true);
             }
         }
     }
-    OK(false)
+    Ok(false)
 }
