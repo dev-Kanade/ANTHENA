@@ -10,6 +10,14 @@ const SYSTEM_USERNAME:&str = "ANTHENA";
 
 pub fn installer(){
     install_method();
+    match install_method(){
+        1 => println!("自動インストール"),
+        2 => println!("カスタムインストール"),
+        _ => {
+            println!("エラー");
+            process::exit(1);
+        }
+    },
     let allow:bool = allow_install();
     if allow == true {
         printwelcom();
