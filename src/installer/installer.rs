@@ -9,6 +9,7 @@ use std::io::{self,BufRead};
 const SYSTEM_USERNAME:&str = "ANTHENA";
 
 pub fn installer(){
+    install_method();
     let allow:bool = allow_install();
     if allow == true {
         printwelcom();
@@ -167,5 +168,6 @@ fn user_exists(username:&str)->io::Result<bool>{
 }
 
 fn install_method()->i32{
-    
+    println!("ANTHENAをインストールする方法を選択してください。\n1.)推奨される構成で自動インストール\n2.)カスタムインストール");
+    12
 }
