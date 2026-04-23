@@ -174,7 +174,7 @@ fn install_method()->i32{
     println!("ANTHENAをインストールする方法を選択してください。\n1.)推奨される構成で自動インストール\n2.)カスタムインストール");
     
     let mut input = String::new();
-    i8::stdin()
+    io::stdin()
         .read_line(&mut input)
         .expect("[ERROR]インストーラー起動中にエラーが発生しました。");
 
