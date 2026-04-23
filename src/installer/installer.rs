@@ -1,14 +1,21 @@
 use std::process::Command;
 use std::process;
 use std::env;
-use tokio;
-use tokio_postgres::{NoTls,Error};
 use std::fs;
-use std::io::{self,BufRead};
+use std::io;
 
-const SYSTEM_USERNAME:&str = "ANTHENA";
+const _SYSTEM_USERNAME:&str = "ANTHENA";
 
 pub fn installer(){
+
+    match install_method(){
+        1 => println!("自動インストール"),
+        2 => println!("カスタムインストール"),
+        _ => {
+            println!("エラー");
+            process::exit(1);
+        }
+    }
     let allow:bool = allow_install();
     if allow == true {
         printwelcom();
@@ -143,15 +150,16 @@ fn allow_install()->bool{
     }
 }
 
-const DBNAME:&str = "";
-fn create_db(){
+const _DBNAME:&str = "";
+fn _create_db(){
     println!("ここでDBに関する操作がおこなわれます。");
     //既存のDBに接続する必要があるため、パスワードがあったらな
 }
 
 
-fn user_exists(username:&str)->io::Result<bool>{
-    let file = fs::File::Open("/etc/passwd")?;
+fn _user_exists(username:&str)->io::Result<bool>{
+    /*
+    let file = fs::File::open("/etc/passwd")?;
 
     let reader = io::BufReader::new(file);
 
@@ -159,9 +167,23 @@ fn user_exists(username:&str)->io::Result<bool>{
         let line = line?;
         if let Some(name) = line.split(":").next(){
             if name == username { 
-                return OK(true);
+                return Ok(true);
             }
         }
     }
-    OK(false)
+    Ok(false)
+    */
+    Ok(true)
+}
+
+fn install_method()->i32{
+    println!("ANTHENAをインストールする方法を選択してください。\n1.)推奨される構成で自動インストール\n2.)カスタムインストール");
+    println!("インストール番号を入力してください。\n");
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("[ERROR]インストーラー起動中にエラーが発生しました。");
+
+    let number:i32 = input.trim().parse().expect("選択肢外のシグナル");
+    number
 }
