@@ -9,7 +9,7 @@ use std::io;
 const SYSTEM_USERNAME:&str = "ANTHENA";
 
 pub fn installer(){
-    install_method();
+    
     match install_method(){
         1 => println!("自動インストール"),
         2 => println!("カスタムインストール"),
