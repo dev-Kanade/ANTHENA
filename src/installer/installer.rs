@@ -156,6 +156,8 @@ fn allow_install()->bool{
     }else{
         false
     }
+    /* OS以外のチェックも今後実装 */
+
 }
 
 const _DBNAME:&str = "";
