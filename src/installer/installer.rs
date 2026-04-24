@@ -202,4 +202,4 @@ fn install_auto(){
     //現在のOS要件に加えスペック要件の確認を追加します。
 }
 
-fn install_custom(){}
+fn _install_custom(){}
