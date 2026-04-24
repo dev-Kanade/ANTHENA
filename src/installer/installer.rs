@@ -22,7 +22,7 @@ pub fn installer(){
             process::exit(1);
         }
     }
-    let allow:bool = allow_install();
+   /* let allow:bool = allow_install();
     if allow == true {
         printwelcom();
         chek_postgres();
@@ -33,6 +33,7 @@ pub fn installer(){
         println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
         process::exit(1);
     }
+        */
 }
 
 /*
