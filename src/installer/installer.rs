@@ -212,7 +212,10 @@ fn install_auto(){
     //DBを新しく作成
     //テーブルを作成
     //システムユーザーの作成
-    match user_exists(){}
+    match user_exists(SYSTEM_USERNAME){
+        true => {}
+        false => {}
+    }
     //Systemctlの設定
 }
 
