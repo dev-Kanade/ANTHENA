@@ -4,8 +4,14 @@ use std::env;
 //use std::fs;
 use std::io;
 
-const _SYSTEM_USERNAME:&str = "ANTHENA";
+//const _SYSTEM_USERNAME:&str = "ANTHENA";
 
+/*
+
+\\\ お願い ///
+冗長化をして！！！！
+
+*/
 pub fn installer(){
 
     match install_method(){
