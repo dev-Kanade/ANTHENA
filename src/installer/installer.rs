@@ -197,5 +197,5 @@ fn install_method()->i32{
 
 
 fn install_auto(){
-    println!("自動インストール");
+    printwelcom();//Welcomメッセージ
 }
