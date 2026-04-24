@@ -210,7 +210,9 @@ fn install_auto(){
     }
     match chek_postgres(){
         true => {}
-        false => {}
+        false => {
+            install_postgres();
+        }
     }
 }
 
