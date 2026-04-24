@@ -33,6 +33,7 @@ pub fn installer(){
         println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
         process::exit(1);
     }
+        ||||if分からmatch分に切り替えるためコメントアウトしています。||||
         */
 }
 
