@@ -2,7 +2,7 @@ use rand::Rng;
 use std::process::Command;
 use std::process;
 
-const SYSTEM_USERNAME:&str = "ANTHENA";
+const _SYSTEM_USERNAME:&str = "ANTHENA";
 
 pub fn _create_system_user(){
     let user_password:String = create_pass();
