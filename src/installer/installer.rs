@@ -201,9 +201,7 @@ fn install_auto(){
     printwelcom();//Welcomメッセージ
     println!("[INF]デバイス要件を確認中です....");
     match allow_install(){
-        true =>{
-            
-        }
+        true =>{}
         false => {
             println!("[INF]ANTHENAの動作要件をクリアしていないためインストーラーを終了します。");
             process::exit(0);
