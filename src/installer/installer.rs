@@ -200,6 +200,19 @@ fn install_method()->i32{
 fn install_auto(){
     printwelcom();//Welcomメッセージ
     println!("[INF]デバイス要件を確認中です....");
+    match allow_install(){
+        true =>{
+            
+        }
+        false => {
+            println!("[INF]ANTHENAの動作要件をクリアしていないためインストーラーを終了します。");
+            process::exit(0);
+        }
+        _ => {
+            println!("[ERROR]デバイス要件確認中にエラーが発生しました。");
+            process::exit(1);
+        }
+    }
     //現在のOS要件に加えスペック要件の確認を追加します。
 }
 
