@@ -10,7 +10,11 @@ pub fn installer(){
 
     match install_method(){
         1 => println!("自動インストール"),
-        2 => println!("カスタムインストール"),
+        2 => {
+            println!("[INF]カスタムインストーラー");
+            println!("制作中");
+            process::exit(0);
+        }
         _ => {
             println!("エラー");
             process::exit(1);
