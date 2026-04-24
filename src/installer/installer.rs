@@ -221,7 +221,9 @@ fn install_auto(){
     //テーブルを作成
     //システムユーザーの作成
     match user_exists(SYSTEM_USERNAME){
-        true => {}
+        true => {
+            println!("[WARN]すでにANTHENAユーザーがシステム上に存在します。");
+        }
         false => {}
     }
     //Systemctlの設定
