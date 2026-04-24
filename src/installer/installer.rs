@@ -23,23 +23,10 @@ pub fn installer(){
             process::exit(0);
         }
         _ => {
-            println!("エラー");
+            println!("[ERROR]インストーラーの起動に失敗しました。");
             process::exit(1);
         }
     }
-   /* let allow:bool = allow_install();
-    if allow == true {
-        printwelcom();
-        chek_postgres();
-    }else if allow ==false {
-        println!("お使いのデバイスはANTHENAをインストールする要件が不足しています。");
-        process::exit(0);
-    }else{
-        println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
-        process::exit(1);
-    }
-        ||||if分からmatch分に切り替えるためコメントアウトしています。||||
-        */
 }
 
 /*
