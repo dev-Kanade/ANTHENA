@@ -159,20 +159,27 @@ fn _create_db(){
 }
 
 
-fn user_exists(username:&str)->io::Result<bool>{
-    let file = fs::File::open("/etc/passwd")?;
+fn user_exists(username: &str) -> bool {
+    // /etc/passwd ファイルを開く
+    let file = match File::open("/etc/passwd") {
+        Ok(f) => f,
+        Err(_) => return false, // ファイルが開けない場合は存在しないとみなす
+    };
+    
+    let reader = BufReader::new(file);
 
-    let reader = io::BufReader::new(file);
-
-    for line in reader.lines(){
-        let line = line?;
-        if let Some(name) = line.split(":").next(){
-            if name == username { 
-                return Ok(true);
+    // 1行ずつ読み込んで解析
+    for line in reader.lines() {
+        if let Ok(content) = line {
+            if let Some(user) = content.split(':').next() {
+                if user == username {
+                    return true;
+                }
             }
         }
     }
-    Ok(false)
+    
+    false
 }
 
 fn install_method()->i32{
