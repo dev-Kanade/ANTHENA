@@ -208,6 +208,10 @@ fn install_auto(){
             process::exit(0);
         }
     }
+    match chek_postgres(){
+        true => {}
+        false => {}
+    }
 }
 
 fn _install_custom(){}
