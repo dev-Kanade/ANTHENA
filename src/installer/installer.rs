@@ -191,3 +191,8 @@ fn install_method()->i32{
     let number:i32 = input.trim().parse().expect("選択肢外のシグナル");
     number
 }
+
+
+fn install_auto(){
+    println!("自動インストール");
+}
