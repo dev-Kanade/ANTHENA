@@ -4,7 +4,7 @@ use std::process;
 
 const SYSTEM_USERNAME:&str = "ANTHENA";
 
-pub fn _create_system_user(){
+pub fn create_system_user(){
     let user_password:String = create_pass();
     println!("生成したパスワード:{user_password}");
 

@@ -224,7 +224,9 @@ fn install_auto(){
         true => {
             println!("[WARN]すでにANTHENAユーザーがシステム上に存在します。");
         }
-        false => {}
+        false => {
+            super::user::
+        }
     }
     //Systemctlの設定
 }
