@@ -162,15 +162,13 @@ fn _create_db(){
 
 
 fn user_exists(username: &str) -> bool {
-    // /etc/passwd ファイルを開く
     let file = match File::open("/etc/passwd") {
         Ok(f) => f,
-        Err(_) => return false, // ファイルが開けない場合は存在しないとみなす
+        Err(_) => return false, 
     };
     
     let reader = BufReader::new(file);
 
-    // 1行ずつ読み込んで解析
     for line in reader.lines() {
         if let Ok(content) = line {
             if let Some(user) = content.split(':').next() {
@@ -182,6 +180,7 @@ fn user_exists(username: &str) -> bool {
     }
     
     false
+    //もちろんDebian系のOS前提
 }
 
 fn install_method()->i32{
