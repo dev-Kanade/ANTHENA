@@ -35,7 +35,7 @@ pub fn _create_system_user(){
 }
 
 
-fn _create_pass()-> String {
+fn create_pass()-> String {
     let pass:String = rand::thread_rng()
         .sample_iter(&rand::distributions::Alphanumeric)
         .take(10)
