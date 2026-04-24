@@ -208,6 +208,12 @@ fn install_auto(){
             install_postgres();
         }
     }
+    //PostgreSQLインストール後の流れ
+    //Postgresのロールを作成
+    //DBを新しく作成
+    //テーブルを作成
+    //システムユーザーの作成
+    //Systemctlの設定
 }
 
 fn install_custom(){}
