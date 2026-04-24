@@ -83,13 +83,14 @@ fn chek_postgres()-> bool {
 
 
 //ANTHENAのインストール各処理
+/*
 fn _setup(){
     println!("[INF]システムのインストールを準備中です...");
-    super::user::create_system_user();
+    //super::user::create_system_user();
     super::table::create_table();
     create_systemctl();
 }
-
+*/
 
 fn postgres_cheak_error(_error: std::io::Error){
     eprintln!("[ERROR]Postgresの確認中にエラーが発生しました。");
