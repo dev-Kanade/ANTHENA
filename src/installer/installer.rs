@@ -158,8 +158,8 @@ fn _create_db(){
     //既存のDBに接続する必要があるため、パスワードがあったらな
 }
 
-/*
-fn _user_exists(_username:&str)->io::Result<bool>{
+
+fn _user_exists(username:&str)->io::Result<bool>{
     /*
     let file = fs::File::open("/etc/passwd")?;
 
@@ -177,7 +177,6 @@ fn _user_exists(_username:&str)->io::Result<bool>{
     */
     Ok(true)
 }
-*/
 
 fn install_method()->i32{
     println!("ANTHENAをインストールする方法を選択してください。\n1.)推奨される構成で自動インストール\n2.)カスタムインストール");
