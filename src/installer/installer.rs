@@ -199,5 +199,5 @@ fn install_method()->i32{
 fn install_auto(){
     printwelcom();//Welcomメッセージ
     println!("[INF]デバイス要件を確認中です....");
-    
+    //現在のOS要件に加えスペック要件の確認を追加します。
 }
