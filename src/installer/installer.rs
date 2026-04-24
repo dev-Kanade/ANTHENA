@@ -121,7 +121,7 @@ fn install_postgres() {
 }
 
 
-fn create_systemctl(){
+fn _create_systemctl(){
     println!("[INF]Systemctlの設定を行っています....");
 
     let systemname:&str = "anthenaauth.service";

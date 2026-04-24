@@ -4,7 +4,7 @@ use std::process;
 
 const SYSTEM_USERNAME:&str = "ANTHENA";
 
-pub fn create_system_user(){
+pub fn _create_system_user(){
     let user_password:String = create_pass();
     println!("生成したパスワード:{user_password}");
 
@@ -35,7 +35,7 @@ pub fn create_system_user(){
 }
 
 
-fn create_pass()-> String {
+fn _create_pass()-> String {
     let pass:String = rand::thread_rng()
         .sample_iter(&rand::distributions::Alphanumeric)
         .take(10)
