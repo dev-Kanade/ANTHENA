@@ -168,11 +168,11 @@ fn user_exists(username:&str)->io::Result<bool>{
         let line = line?;
         if let Some(name) = line.split(":").next(){
             if name == username { 
-                return Ok(true);
+                return ok(true);
             }
         }
     }
-    Ok(false)
+    ok(false)
 }
 
 fn install_method()->i32{
