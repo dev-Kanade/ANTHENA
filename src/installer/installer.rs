@@ -61,7 +61,7 @@ fn printwelcom(){
     println!("[INF]ANTHENAインストーラーを起動しました。")
 }
 
-fn chek_postgres(){
+fn chek_postgres()-> bool {
     println!("[INF]お使いのデバイスにPostgreSQLがインストールされているかを確認中です。");
     match Command::new("psql").arg("-V").output() {
         Ok(output) if output.status.success() => {
