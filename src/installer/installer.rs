@@ -206,13 +206,14 @@ fn install_auto(){
         }
         false => {
             println!("[INF]ANTHENAの動作要件をクリアしていないためインストーラーを終了します。");
-            process::exit(0);
+           // process::exit(0);
         }
         _ => {
             println!("[ERROR]デバイス要件確認中にエラーが発生しました。");
             process::exit(1);
         }
     }
+    println!("d");
     //現在のOS要件に加えスペック要件の確認を追加します。
 }
 
