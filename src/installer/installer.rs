@@ -65,18 +65,17 @@ fn chek_postgres()-> bool {
     println!("[INF]お使いのデバイスにPostgreSQLがインストールされているかを確認中です。");
     match Command::new("psql").arg("-V").output() {
         Ok(output) if output.status.success() => {
-            setup();
+            true
         }
         Ok(_) => {
-            install_postgres();
-            setup();
+            false
         }
         Err(e) => {
             if e.kind() == std::io::ErrorKind::NotFound {
-                install_postgres();
-                setup();
+                false
             } else {
-                postgres_cheak_error(e);
+                println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
+                process::exit(1);
             }
         }
     }
