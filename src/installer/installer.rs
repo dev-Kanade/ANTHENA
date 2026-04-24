@@ -217,4 +217,4 @@ fn install_auto(){
     }
 }
 
-fn _install_custom(){}
+fn install_custom(){}
