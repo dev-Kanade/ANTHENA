@@ -159,7 +159,7 @@ fn _create_db(){
 }
 
 
-fn _user_exists(username:&str)->io::Result<bool>{
+fn user_exists(username:&str)->io::Result<bool>{
     /*
     let file = fs::File::open("/etc/passwd")?;
 
@@ -215,6 +215,7 @@ fn install_auto(){
     //DBを新しく作成
     //テーブルを作成
     //システムユーザーの作成
+    match 
     //Systemctlの設定
 }
 
