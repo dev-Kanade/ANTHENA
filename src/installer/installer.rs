@@ -10,7 +10,6 @@ pub fn installer(){
 
     match install_method(){
         1 => {
-            println!("[INF]自動インストーラー");
             install_auto();
         },
         2 => {
