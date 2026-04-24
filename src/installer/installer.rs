@@ -160,7 +160,6 @@ fn _create_db(){
 
 
 fn user_exists(username:&str)->io::Result<bool>{
-    /*
     let file = fs::File::open("/etc/passwd")?;
 
     let reader = io::BufReader::new(file);
@@ -174,8 +173,6 @@ fn user_exists(username:&str)->io::Result<bool>{
         }
     }
     Ok(false)
-    */
-    Ok(true)
 }
 
 fn install_method()->i32{
@@ -215,7 +212,7 @@ fn install_auto(){
     //DBを新しく作成
     //テーブルを作成
     //システムユーザーの作成
-    match 
+    match user_exists(){}
     //Systemctlの設定
 }
 
