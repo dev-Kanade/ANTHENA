@@ -168,11 +168,11 @@ fn user_exists(username:&str)->io::Result<bool>{
         let line = line?;
         if let Some(name) = line.split(":").next(){
             if name == username { 
-                return ok(true);
+                return Ok(true);
             }
         }
     }
-    ok(false)
+    Ok(false)
 }
 
 fn install_method()->i32{
@@ -213,8 +213,8 @@ fn install_auto(){
     //テーブルを作成
     //システムユーザーの作成
     match user_exists(SYSTEM_USERNAME){
-        ok(true) => {}
-        ok(false) => {}
+        Ok(true) => {}
+        Ok(false) => {}
     }
     //Systemctlの設定
 }
