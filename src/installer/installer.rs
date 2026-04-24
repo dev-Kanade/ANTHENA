@@ -4,7 +4,7 @@ use std::env;
 //use std::fs;
 use std::io;
 
-//const _SYSTEM_USERNAME:&str = "ANTHENA";
+const SYSTEM_USERNAME:&str = "ANTHENA";
 
 /*
 
