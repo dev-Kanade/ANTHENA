@@ -193,7 +193,7 @@ fn install_method()->i32{
         .read_line(&mut input)
         .expect("[ERROR]インストーラー起動中にエラーが発生しました。");
 
-    let number:i32 = input.trim().parse().expect("選択肢外のシグナル");
+    let number:i32 = input.trim().parse().expect("[ERROR]不明なオプションが指定されました。");
     number
 }
 
