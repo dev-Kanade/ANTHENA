@@ -203,7 +203,10 @@ fn install_auto(){
         }
     }
     match chek_postgres(){
-        true => {}
+        true => {
+            //ここでPostgresのDBにデフォルト設定でアクセスを試みる。
+            //アクセスに失敗した場合、ユーザーに尋ねる
+        }
         false => {
             install_postgres();
         }
