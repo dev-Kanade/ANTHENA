@@ -13,8 +13,7 @@ pub fn installer(){
             install_auto();
         },
         2 => {
-            println!("[INF]カスタムインストーラー");
-            println!("制作中");
+            install_custom();
             process::exit(0);
         }
         _ => {
