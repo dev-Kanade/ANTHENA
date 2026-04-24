@@ -213,8 +213,8 @@ fn install_auto(){
     //テーブルを作成
     //システムユーザーの作成
     match user_exists(SYSTEM_USERNAME){
-        true => {}
-        false => {}
+        ok(true) => {}
+        ok(false) => {}
     }
     //Systemctlの設定
 }
