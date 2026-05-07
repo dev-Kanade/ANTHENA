@@ -223,6 +223,7 @@ fn install_auto(){
     match user_exists(SYSTEM_USERNAME){
         true => {
             println!("[WARN]すでにANTHENAユーザーがシステム上に存在します。");
+            //ここで、任意のユーザー名を訪ねる
         }
         false => {
             super::user::create_system_user();
