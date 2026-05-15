@@ -1,6 +1,7 @@
 use std::process::Command;
 
 pub fn uninstall(){
+    panic!("未実装のためパニックしました。");
     println!("[INF]ANTHENAアンインストーラーが起動しました。");
     del_systemctl();
 }
