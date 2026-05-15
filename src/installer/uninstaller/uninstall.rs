@@ -21,3 +21,27 @@ fn del_systemctl(){
         .args(["systemctl", "daemon-reload"])
         .output();
 }
+use std::process::Command;
+
+pub fn uninstall(){
+    panic!("未実装のためパニックしました。");
+    println!("[INF]ANTHENAアンインストーラーが起動しました。");
+    del_systemctl();
+}
+
+fn del_systemctl(){
+    let systemname:&str = "anthenaauth.service";
+
+    println!("[INF]ANTHENAを停止しています。");
+    let _ = Command::new("sudo")
+        .args(["systemctl","stop",systemname])
+        .output();
+    println!("[INF]Systemctl設定をアンインストールしています。");
+    let _ = Command::new("sudo")
+        .args(["rm","-rf","/etc/systemd/systemctl/",systemname])
+        .output();
+    println!("[INF]Systemctlを読み込み中です。");
+    let _ = Command::new("sudo")
+        .args(["systemctl", "daemon-reload"])
+        .output();
+}
