@@ -1,31 +1,33 @@
 use std::process::Command;
 use std::process;
 use std::env;
-use std::fs;
 use std::io;
+use std::fs;
+use std::fs::File;
+use std::io::{BufRead, BufReader};
 
-const _SYSTEM_USERNAME:&str = "ANTHENA";
+const SYSTEM_USERNAME:&str = "ANTHENA";
 
+/*
+
+\\\ お願い ///
+冗長化をして！！！！
+
+*/
 pub fn installer(){
 
     match install_method(){
-        1 => println!("自動インストール"),
-        2 => println!("カスタムインストール"),
+        1 => {
+            install_auto();
+        },
+        2 => {
+            install_custom();
+            process::exit(0);
+        }
         _ => {
-            println!("エラー");
+            println!("[ERROR]インストーラーの起動に失敗しました。");
             process::exit(1);
         }
-    }
-    let allow:bool = allow_install();
-    if allow == true {
-        printwelcom();
-        chek_postgres();
-    }else if allow ==false {
-        println!("お使いのデバイスはANTHENAをインストールする要件が不足しています。");
-        process::exit(0);
-    }else{
-        println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
-        process::exit(1);
     }
 }
 
@@ -53,22 +55,21 @@ fn printwelcom(){
     println!("[INF]ANTHENAインストーラーを起動しました。")
 }
 
-fn chek_postgres(){
+fn chek_postgres()-> bool {
     println!("[INF]お使いのデバイスにPostgreSQLがインストールされているかを確認中です。");
     match Command::new("psql").arg("-V").output() {
         Ok(output) if output.status.success() => {
-            setup();
+            true
         }
         Ok(_) => {
-            install_postgres();
-            setup();
+            false
         }
         Err(e) => {
             if e.kind() == std::io::ErrorKind::NotFound {
-                install_postgres();
-                setup();
+                false
             } else {
-                postgres_cheak_error(e);
+                println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
+                process::exit(1);
             }
         }
     }
@@ -76,13 +77,14 @@ fn chek_postgres(){
 
 
 //ANTHENAのインストール各処理
-fn setup(){
+/*
+fn _setup(){
     println!("[INF]システムのインストールを準備中です...");
-    super::user::create_system_user();
+    //super::user::create_system_user();
     super::table::create_table();
     create_systemctl();
 }
-
+*/
 
 fn postgres_cheak_error(_error: std::io::Error){
     eprintln!("[ERROR]Postgresの確認中にエラーが発生しました。");
@@ -113,7 +115,7 @@ fn install_postgres() {
 }
 
 
-fn create_systemctl(){
+fn _create_systemctl(){
     println!("[INF]Systemctlの設定を行っています....");
 
     let systemname:&str = "anthenaauth.service";
@@ -148,6 +150,8 @@ fn allow_install()->bool{
     }else{
         false
     }
+    /* OS以外のチェックも今後実装 */
+
 }
 
 const _DBNAME:&str = "";
@@ -157,23 +161,26 @@ fn _create_db(){
 }
 
 
-fn _user_exists(username:&str)->io::Result<bool>{
-    /*
-    let file = fs::File::open("/etc/passwd")?;
+fn user_exists(username: &str) -> bool {
+    let file = match File::open("/etc/passwd") {
+        Ok(f) => f,
+        Err(_) => return false, 
+    };
+    
+    let reader = BufReader::new(file);
 
-    let reader = io::BufReader::new(file);
-
-    for line in reader.lines(){
-        let line = line?;
-        if let Some(name) = line.split(":").next(){
-            if name == username { 
-                return Ok(true);
+    for line in reader.lines() {
+        if let Ok(content) = line {
+            if let Some(user) = content.split(':').next() {
+                if user == username {
+                    return true;
+                }
             }
         }
     }
-    Ok(false)
-    */
-    Ok(true)
+    
+    false
+    //もちろんDebian系のOS前提
 }
 
 fn install_method()->i32{
@@ -184,6 +191,47 @@ fn install_method()->i32{
         .read_line(&mut input)
         .expect("[ERROR]インストーラー起動中にエラーが発生しました。");
 
-    let number:i32 = input.trim().parse().expect("選択肢外のシグナル");
+    let number:i32 = input.trim().parse().expect("[ERROR]不明なオプションが指定されました。");
     number
 }
+
+
+fn install_auto(){
+    printwelcom();
+    println!("[INF]デバイス要件を確認中です....");
+    match allow_install(){
+        true =>{}
+        false => {
+            println!("[INF]ANTHENAの動作要件をクリアしていないためインストーラーを終了します。");
+            process::exit(0);
+        }
+    }
+    match chek_postgres(){
+        true => {
+            //ここでPostgresのDBにデフォルト設定でアクセスを試みる。
+            //アクセスに失敗した場合、ユーザーに尋ねる
+        }
+        false => {
+            install_postgres();
+        }
+    }
+    //PostgreSQLインストール後の流れ
+    //Postgresのロールを作成
+    //DBを新しく作成
+    //テーブルを作成
+    //システムユーザーの作成
+    match user_exists(SYSTEM_USERNAME){
+        true => {
+            println!("[WARN]すでにANTHENAユーザーがシステム上に存在します。");
+            //ここで、任意のユーザー名を訪ねる
+        }
+        false => {
+            super::user::create_system_user();
+        }
+    }
+    //Systemctlの設定
+}
+
+fn install_custom(){}
+
+//2026/04/24 :今日は私の誕生日です。そろそろ、インストーラーを書き上げてメインに移りたいです):

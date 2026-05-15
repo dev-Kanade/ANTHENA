@@ -5,6 +5,6 @@
     現在はprintln!だけ実装しています-_-
 */
 
-pub fn create_table(){
+pub fn _create_table(){
     println!("[DEBUG]ここでは、テーブルに関する処理をおこないますが、現在はメモが出力されています。");
 }
