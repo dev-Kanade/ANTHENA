@@ -68,7 +68,7 @@ fn chek_postgres()-> bool {
             if e.kind() == std::io::ErrorKind::NotFound {
                 false
             } else {
-                println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");
+                println!("[ERROR]ANTHENAインストール中にエラーが発生しました。");//こことかもっとマシにする。
                 process::exit(1);
             }
         }
